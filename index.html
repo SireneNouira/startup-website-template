@@ -81,234 +81,118 @@
         </div>
       </div>
     </div>
-    <div class="main" id="main">
+   <div class="main" id="main">
       <div
-        class="relative flex items-center h-screen px-4 lg:px-0 bg-white dark:bg-dark"
+        class="relative flex items-center h-screen px-4 lg:px-0"
         id="slider"
       >
       <div
-  class="sticky z-10 lg:w-2/5 2xl:w-1/2 mx-auto text-center mt-20 rounded-lg p-28  overflow-hidden bg-white dark:bg-black"
->
-  <h1 class="heading text-3xl lg:text-5xl !leading-normal relative z-20 text-black dark:text-white">
-    Startup Focused Tailwind CSS Template
-  </h1>
-  <p class="text-neutral-600 dark:text-gray-400 text-xl font-medium leading-normal my-4 relative z-20">
-    A Complete Tailwind CSS Web Template Crafted for - Startup, SaaS, Business, Software and Agencies. Comes with high-quality design and everything you need!
-  </p>
-  <div class="flex flex-col lg:flex-row items-center justify-center mt-8 p-6 relative z-20">
-    <a href="#pricing" class="btn bg-[#4a6cf7] hover:bg-[#3b56d7] dark:bg-[#5a7dff] dark:hover:bg-[#4268e3] text-white">
-      Get Started
-    </a>
-    <a href="#features" class="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5">
-      Learn More
-    </a>
-  </div>
-
-  <!-- Fond noir -->
-  <div class="absolute inset-0 bg-black z-0 opacity-20 dark:opacity-50"></div>
-
-  <!-- Conteneur des points blancs interactifs -->
-  <div class="dots absolute inset-0 z-10 pointer-events-none"></div>
-
-  <!-- Bordure avec un style plus moderne (bordure arrondie avec ombre légère) -->
-  <div class="absolute inset-0 border-4 border-[#4a6cf7] rounded-lg shadow-lg z-0"></div>
-</div>
-
-<style>
-  /* Fond noir */
-  .sticky {
-    position: relative;
-  }
-
-  /* Conteneur des points blancs interactifs */
-  .dots {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Les points ne bloquent pas les interactions avec le contenu */
-    z-index: 0; /* Les points sont derrière le contenu */
-  }
-
-  /* Petits points blancs interactifs */
-  .dots span {
-    display: inline-block;
-    width: 2px; /* Taille des points */
-    height: 2px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
-  }
-
-  /* Points blancs en mode sombre */
-  .dark .dots span {
-    background-color: rgba(255, 255, 255, 0.6); /* Points plus légers en mode sombre */
-  }
-</style>
-
-<script>
-  // Créer des petits points blancs sous forme de divs
-  document.addEventListener("DOMContentLoaded", function () {
-    const dotsContainer = document.querySelector('.dots');
-    const totalDots = 600; // Nombre de points
-
-    // Créer les petits points blancs
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement('span');
-      dotsContainer.appendChild(dot);
-      const x = Math.random() * 100; // Position aléatoire en X
-      const y = Math.random() * 100; // Position aléatoire en Y
-      const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire
-      dot.style.left = `${x}%`;
-      dot.style.top = `${y}%`;
-      dot.style.opacity = opacity; // Appliquer l'opacité aléatoire
-    }
-
-    // Réduire la zone d'interaction à 40px au lieu de 100px
-    document.querySelector('.sticky').addEventListener('mousemove', function (e) {
-      const dots = document.querySelectorAll('.dots span');
-      dots.forEach(dot => {
-        const rect = dot.getBoundingClientRect();
-        const mouseX = e.pageX;
-        const mouseY = e.pageY;
-
-        const offsetX = mouseX - rect.left;
-        const offsetY = mouseY - rect.top;
-
-        const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
-
-        // Réduire la zone d'interaction à 40px
-        if (distance < 40) { // Moins de 40px d'interaction
-          // Déplacer le point sous la souris
-          dot.style.transform = `translate(${(offsetX / 3)}px, ${(offsetY / 3)}px)`; // Amplitude réduite à 3
-          
-          // Appliquer une opacité plus intense
-          const opacity = Math.random() * 0.6 + 0.4;
-          dot.style.opacity = opacity;
-        }
-      });
-    });
-  });
-</script>
-
-        </div>
-       
-        <div class="absolute bottom-0 left-0">
-          <svg
-            width="364"
-            height="201"
-            viewBox="0 0 364 201"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.88928 72.3303C33.6599 66.4798 101.397 64.9086 150.178 105.427C211.155 156.076 229.59 162.093 264.333 166.607C299.076 171.12 337.718 183.657 362.889 212.24"
-              stroke="url(#paint0_linear_25:218)"
-            ></path>
-            <path
-              d="M-22.1107 72.3303C5.65989 66.4798 73.3965 64.9086 122.178 105.427C183.155 156.076 201.59 162.093 236.333 166.607C271.076 171.12 309.718 183.657 334.889 212.24"
-              stroke="url(#paint1_linear_25:218)"
-            ></path>
-            <path
-              d="M-53.1107 72.3303C-25.3401 66.4798 42.3965 64.9086 91.1783 105.427C152.155 156.076 170.59 162.093 205.333 166.607C240.076 171.12 278.718 183.657 303.889 212.24"
-              stroke="url(#paint2_linear_25:218)"
-            ></path>
-            <path
-              d="M-98.1618 65.0889C-68.1416 60.0601 4.73364 60.4882 56.0734 102.431C120.248 154.86 139.905 161.419 177.137 166.956C214.37 172.493 255.575 186.165 281.856 215.481"
-              stroke="url(#paint3_linear_25:218)"
-            ></path>
-            <circle
-              opacity="0.8"
-              cx="214.505"
-              cy="60.5054"
-              r="49.7205"
-              transform="rotate(-13.421 214.505 60.5054)"
-              stroke="url(#paint4_linear_25:218)"
-            ></circle>
-            <circle
-              cx="220"
-              cy="63"
-              r="43"
-              fill="url(#paint5_radial_25:218)"
-            ></circle>
-            <defs>
-              <linearGradient
-                id="paint0_linear_25:218"
-                x1="184.389"
-                y1="69.2405"
-                x2="184.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0"></stop>
-                <stop offset="1" stop-color="#4A6CF7"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_25:218"
-                x1="156.389"
-                y1="69.2405"
-                x2="156.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0"></stop>
-                <stop offset="1" stop-color="#4A6CF7"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_25:218"
-                x1="125.389"
-                y1="69.2405"
-                x2="125.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0"></stop>
-                <stop offset="1" stop-color="#4A6CF7"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_25:218"
-                x1="93.8507"
-                y1="67.2674"
-                x2="89.9278"
-                y2="210.214"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0"></stop>
-                <stop offset="1" stop-color="#4A6CF7"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_25:218"
-                x1="214.505"
-                y1="10.2849"
-                x2="212.684"
-                y2="99.5816"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0"></stop>
-              </linearGradient>
-              <radialGradient
-                id="paint5_radial_25:218"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(220 63) rotate(90) scale(43)"
-              >
-                <stop
-                  offset="0.145833"
-                  stop-color="white"
-                  stop-opacity="0"
-                ></stop>
-                <stop offset="1" stop-color="white" stop-opacity="0.08"></stop>
-              </radialGradient>
-            </defs>
-          </svg>
-        </div>
+      class="sticky z-10 lg:w-2/5 2xl:w-1/2 mx-auto text-center mt-20 border-double border-8 border-violet-400 rounded-lg p-28  overflow-hidden bg-white dark:bg-black"
+    >
+      <h1 class="heading text-3xl lg:text-5xl !leading-normal relative z-20 text-black dark:text-white">
+        Startup Focused Tailwind CSS Template
+      </h1>
+      <p class="text-neutral-600 dark:text-gray-400 text-xl font-medium leading-normal my-4 relative z-20">
+        A Complete Tailwind CSS Web Template Crafted for - Startup, SaaS, Business, Software and Agencies. Comes with high-quality design and everything you need!
+      </p>
+      <div class="flex flex-col lg:flex-row items-center justify-center mt-8 p-6 relative z-20">
+        <a href="#pricing" class="btn bg-[#4a6cf7] hover:bg-[#3b56d7] dark:bg-[#5a7dff] dark:hover:bg-[#4268e3] text-white">
+          Get Started
+        </a>
+        <a href="#features" class="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5">
+          Learn More
+        </a>
       </div>
+    
+      <!-- Fond noir -->
+      <div class="absolute inset-0 bg-black z-0 opacity-20 dark:opacity-50"></div>
+    
+      <!-- Conteneur des points blancs interactifs -->
+      <div class="dots absolute inset-0 z-10 pointer-events-none"></div>
+    </div>
+    
+    <style>
+      /* Fond noir */
+      .sticky {
+        position: relative;
+      }
+    
+      /* Conteneur des points blancs interactifs */
+      .dots {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Les points ne bloquent pas les interactions avec le contenu */
+        z-index: 0; /* Les points sont derrière le contenu */
+      }
+    
+      /* Petits points blancs interactifs */
+      .dots span {
+        display: inline-block;
+        width: 2px; /* Taille des points */
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+      }
+    
+      /* Points blancs en mode sombre */
+      .dark .dots span {
+        background-color: rgba(255, 255, 255, 0.6); /* Points plus légers en mode sombre */
+      }
+    </style>
+    
+    <script>
+      // Créer des petits points blancs sous forme de divs
+      document.addEventListener("DOMContentLoaded", function () {
+        const dotsContainer = document.querySelector('.dots');
+        const totalDots = 600; // Nombre de points
+    
+        // Créer les petits points blancs
+        for (let i = 0; i < totalDots; i++) {
+          const dot = document.createElement('span');
+          dotsContainer.appendChild(dot);
+          const x = Math.random() * 100; // Position aléatoire en X
+          const y = Math.random() * 100; // Position aléatoire en Y
+          const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire
+          dot.style.left = `${x}%`;
+          dot.style.top = `${y}%`;
+          dot.style.opacity = opacity; // Appliquer l'opacité aléatoire
+        }
+    
+        // Réduire la zone d'interaction à 40px au lieu de 100px
+        document.querySelector('.sticky').addEventListener('mousemove', function (e) {
+          const dots = document.querySelectorAll('.dots span');
+          dots.forEach(dot => {
+            const rect = dot.getBoundingClientRect();
+            const mouseX = e.pageX;
+            const mouseY = e.pageY;
+    
+            const offsetX = mouseX - rect.left;
+            const offsetY = mouseY - rect.top;
+    
+            const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+    
+            // Réduire la zone d'interaction à 40px
+            if (distance < 40) { // Moins de 40px d'interaction
+              // Déplacer le point sous la souris
+              dot.style.transform = `translate(${(offsetX / 3)}px, ${(offsetY / 3)}px)`; // Amplitude réduite à 3
+              
+              // Appliquer une opacité plus intense
+              const opacity = Math.random() * 0.6 + 0.4;
+              dot.style.opacity = opacity;
+            }
+          });
+        });
+      });
+    </script>
+    
+        </div>
+    </div>
       <div class="py-20 md:py-24 bg-[#efefef] dark:bg-[#0b113a]" id="features">
         <div class="container px-4 mx-auto">
           <div class="w-full lg:w-1/2 2xl:w-1/2 mx-auto text-center">
