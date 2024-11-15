@@ -86,25 +86,32 @@
         class="relative flex items-center h-screen px-4 lg:px-0 bg-white dark:bg-dark"
         id="slider"
       >
-          <div
-  class="sticky z-10 lg:w-2/5 2xl:w-1/2 mx-auto text-center mt-20 border-double border-8 border-black rounded-lg p-28 relative overflow-hidden"
+      <div
+  class="sticky z-10 lg:w-2/5 2xl:w-1/2 mx-auto text-center mt-20 rounded-lg p-28  overflow-hidden bg-white dark:bg-black"
 >
-  <h1 class="heading text-3xl lg:text-5xl !leading-normal relative z-20">
+  <h1 class="heading text-3xl lg:text-5xl !leading-normal relative z-20 text-black dark:text-white">
     Startup Focused Tailwind CSS Template
   </h1>
   <p class="text-neutral-600 dark:text-gray-400 text-xl font-medium leading-normal my-4 relative z-20">
     A Complete Tailwind CSS Web Template Crafted for - Startup, SaaS, Business, Software and Agencies. Comes with high-quality design and everything you need!
   </p>
   <div class="flex flex-col lg:flex-row items-center justify-center mt-8 p-6 relative z-20">
-    <a href="#pricing" class="btn bg-[#4a6cf7]">Get Started</a>
-    <a href="#features" class="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5">Learn More</a>
+    <a href="#pricing" class="btn bg-[#4a6cf7] hover:bg-[#3b56d7] dark:bg-[#5a7dff] dark:hover:bg-[#4268e3] text-white">
+      Get Started
+    </a>
+    <a href="#features" class="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5">
+      Learn More
+    </a>
   </div>
 
   <!-- Fond noir -->
-  <div class="absolute inset-0 bg-black z-0"></div>
+  <div class="absolute inset-0 bg-black z-0 opacity-20 dark:opacity-50"></div>
 
   <!-- Conteneur des points blancs interactifs -->
   <div class="dots absolute inset-0 z-10 pointer-events-none"></div>
+
+  <!-- Bordure avec un style plus moderne (bordure arrondie avec ombre légère) -->
+  <div class="absolute inset-0 border-4 border-[#4a6cf7] rounded-lg shadow-lg z-0"></div>
 </div>
 
 <style>
@@ -127,7 +134,7 @@
   /* Petits points blancs interactifs */
   .dots span {
     display: inline-block;
-    width: 2px; /* Augmenter la taille des points */
+    width: 2px; /* Taille des points */
     height: 2px;
     background-color: white;
     border-radius: 50%;
@@ -135,27 +142,32 @@
     pointer-events: none;
     transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
   }
+
+  /* Points blancs en mode sombre */
+  .dark .dots span {
+    background-color: rgba(255, 255, 255, 0.6); /* Points plus légers en mode sombre */
+  }
 </style>
 
 <script>
   // Créer des petits points blancs sous forme de divs
   document.addEventListener("DOMContentLoaded", function () {
     const dotsContainer = document.querySelector('.dots');
-    const totalDots = 600; // Augmenter le nombre de points (par rapport à 300)
+    const totalDots = 600; // Nombre de points
 
     // Créer les petits points blancs
     for (let i = 0; i < totalDots; i++) {
       const dot = document.createElement('span');
       dotsContainer.appendChild(dot);
-      const x = Math.random() * 100; // Position aléatoire en X (pour recouvrir toute la largeur)
-      const y = Math.random() * 100; // Position aléatoire en Y (pour recouvrir toute la hauteur)
-      const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire entre 0.4 et 1
+      const x = Math.random() * 100; // Position aléatoire en X
+      const y = Math.random() * 100; // Position aléatoire en Y
+      const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire
       dot.style.left = `${x}%`;
       dot.style.top = `${y}%`;
       dot.style.opacity = opacity; // Appliquer l'opacité aléatoire
     }
 
-    // Déplacer uniquement les points sous l'effet de la souris
+    // Réduire la zone d'interaction à 40px au lieu de 100px
     document.querySelector('.sticky').addEventListener('mousemove', function (e) {
       const dots = document.querySelectorAll('.dots span');
       dots.forEach(dot => {
@@ -168,13 +180,13 @@
 
         const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
 
-        // Détecter si la souris est proche du point
-        if (distance < 100) { // Augmenter la zone d'interaction
-          // Déplacer le point sous la souris avec plus d'amplitude
-          dot.style.transform = `translate(${(offsetX / 5)}px, ${(offsetY / 5)}px)`; // Augmenter l'amplitude du mouvement
+        // Réduire la zone d'interaction à 40px
+        if (distance < 40) { // Moins de 40px d'interaction
+          // Déplacer le point sous la souris
+          dot.style.transform = `translate(${(offsetX / 3)}px, ${(offsetY / 3)}px)`; // Amplitude réduite à 3
           
           // Appliquer une opacité plus intense
-          const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire pour un effet plus visible
+          const opacity = Math.random() * 0.6 + 0.4;
           dot.style.opacity = opacity;
         }
       });
@@ -183,160 +195,7 @@
 </script>
 
         </div>
-        <div class="absolute top-0 right-0">
-          <svg
-            width="450"
-            height="556"
-            viewBox="0 0 450 556"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="277"
-              cy="63"
-              r="225"
-              fill="url(#paint0_linear_25:217)"
-            ></circle>
-            <circle
-              cx="17.9997"
-              cy="182"
-              r="18"
-              fill="url(#paint1_radial_25:217)"
-            ></circle>
-            <circle
-              cx="76.9997"
-              cy="288"
-              r="34"
-              fill="url(#paint2_radial_25:217)"
-            ></circle>
-            <circle
-              cx="325.486"
-              cy="302.87"
-              r="180"
-              transform="rotate(-37.6852 325.486 302.87)"
-              fill="url(#paint3_linear_25:217)"
-            ></circle>
-            <circle
-              opacity="0.8"
-              cx="184.521"
-              cy="315.521"
-              r="132.862"
-              transform="rotate(114.874 184.521 315.521)"
-              stroke="url(#paint4_linear_25:217)"
-            ></circle>
-            <circle
-              opacity="0.8"
-              cx="356"
-              cy="290"
-              r="179.5"
-              transform="rotate(-30 356 290)"
-              stroke="url(#paint5_linear_25:217)"
-            ></circle>
-            <circle
-              opacity="0.8"
-              cx="191.659"
-              cy="302.659"
-              r="133.362"
-              transform="rotate(133.319 191.659 302.659)"
-              fill="url(#paint6_linear_25:217)"
-            ></circle>
-            <defs>
-              <linearGradient
-                id="paint0_linear_25:217"
-                x1="-54.5003"
-                y1="-178"
-                x2="222"
-                y2="288"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0"></stop>
-              </linearGradient>
-              <radialGradient
-                id="paint1_radial_25:217"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(17.9997 182) rotate(90) scale(18)"
-              >
-                <stop
-                  offset="0.145833"
-                  stop-color="#4A6CF7"
-                  stop-opacity="0"
-                ></stop>
-                <stop
-                  offset="1"
-                  stop-color="#4A6CF7"
-                  stop-opacity="0.08"
-                ></stop>
-              </radialGradient>
-              <radialGradient
-                id="paint2_radial_25:217"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(76.9997 288) rotate(90) scale(34)"
-              >
-                <stop
-                  offset="0.145833"
-                  stop-color="#4A6CF7"
-                  stop-opacity="0"
-                ></stop>
-                <stop
-                  offset="1"
-                  stop-color="#4A6CF7"
-                  stop-opacity="0.08"
-                ></stop>
-              </radialGradient>
-              <linearGradient
-                id="paint3_linear_25:217"
-                x1="226.775"
-                y1="-66.1548"
-                x2="292.157"
-                y2="351.421"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_25:217"
-                x1="184.521"
-                y1="182.159"
-                x2="184.521"
-                y2="448.882"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="white" stop-opacity="0"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_25:217"
-                x1="356"
-                y1="110"
-                x2="356"
-                y2="470"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="white" stop-opacity="0"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_25:217"
-                x1="118.524"
-                y1="29.2497"
-                x2="166.965"
-                y2="338.63"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7"></stop>
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0"></stop>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+       
         <div class="absolute bottom-0 left-0">
           <svg
             width="364"
