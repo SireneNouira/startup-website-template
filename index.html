@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth" id="root">
+<html lang="en" class="dark scroll-smooth transition-colors duration-300" id="root">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
+        
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -14,7 +15,7 @@
     <title>Startup Landing Page - Tailwind</title>
     <!-- Develoop By: Farideghbali / Farideghbali.com / Farideghbali.dev@gmail.com   -->
   </head>
-  <body class="bg-white dark:bg-dark seceltion font-Inter">
+  <body class="bg-white dark:bg-black selection font-Inter">
     <div class="fixed top-0 left-0 z-50 w-full">
       <div class="px-4 py-4 lg:px-8 lg:py-1" id="header">
         <div class="flex items-center justify-center">
@@ -81,13 +82,15 @@
         </div>
       </div>
     </div>
-   <div class="main" id="main">
+    <!--FOND ETOILEE-->
+    <div class="main" id="main">
       <div
-        class="relative flex items-center h-screen px-4 lg:px-0"
+        class=" flex items-center h-screen px-4 lg:px-0"
         id="slider"
       >
       <div
-      class="sticky z-10 lg:w-2/5 2xl:w-1/2 mx-auto text-center mt-20 border-double border-8 border-violet-400 rounded-lg p-28  overflow-hidden bg-white dark:bg-black"
+      class="sticky mx-auto text-center border-double border-8 border-violet-400 rounded-lg bg-white dark:bg-black"
+      style="width: calc(60vw + 20rem); height: calc(60vh + 10rem); padding: 10rem; box-sizing: border-box;"
     >
       <h1 class="heading text-3xl lg:text-5xl !leading-normal relative z-20 text-black dark:text-white">
         Startup Focused Tailwind CSS Template
@@ -105,94 +108,98 @@
       </div>
     
       <!-- Fond noir -->
-      <div class="absolute inset-0 bg-black z-0 opacity-20 dark:opacity-50"></div>
+      <div class="absolute inset-0 bg-black z-0 opacity-20 dark:opacity-50 pointer-events-none"></div>
     
       <!-- Conteneur des points blancs interactifs -->
       <div class="dots absolute inset-0 z-10 pointer-events-none"></div>
     </div>
     
-    <style>
-      /* Fond noir */
-      .sticky {
-        position: relative;
-      }
-    
-      /* Conteneur des points blancs interactifs */
-      .dots {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none; /* Les points ne bloquent pas les interactions avec le contenu */
-        z-index: 0; /* Les points sont derrière le contenu */
-      }
-    
-      /* Petits points blancs interactifs */
-      .dots span {
-        display: inline-block;
-        width: 2px; /* Taille des points */
-        height: 2px;
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        pointer-events: none;
-        transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
-      }
-    
-      /* Points blancs en mode sombre */
-      .dark .dots span {
-        background-color: rgba(255, 255, 255, 0.6); /* Points plus légers en mode sombre */
-      }
-    </style>
-    
-    <script>
-      // Créer des petits points blancs sous forme de divs
-      document.addEventListener("DOMContentLoaded", function () {
-        const dotsContainer = document.querySelector('.dots');
-        const totalDots = 600; // Nombre de points
-    
-        // Créer les petits points blancs
-        for (let i = 0; i < totalDots; i++) {
-          const dot = document.createElement('span');
-          dotsContainer.appendChild(dot);
-          const x = Math.random() * 100; // Position aléatoire en X
-          const y = Math.random() * 100; // Position aléatoire en Y
-          const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire
-          dot.style.left = `${x}%`;
-          dot.style.top = `${y}%`;
-          dot.style.opacity = opacity; // Appliquer l'opacité aléatoire
-        }
-    
-        // Réduire la zone d'interaction à 40px au lieu de 100px
-        document.querySelector('.sticky').addEventListener('mousemove', function (e) {
-          const dots = document.querySelectorAll('.dots span');
-          dots.forEach(dot => {
-            const rect = dot.getBoundingClientRect();
-            const mouseX = e.pageX;
-            const mouseY = e.pageY;
-    
-            const offsetX = mouseX - rect.left;
-            const offsetY = mouseY - rect.top;
-    
-            const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
-    
-            // Réduire la zone d'interaction à 40px
-            if (distance < 40) { // Moins de 40px d'interaction
-              // Déplacer le point sous la souris
-              dot.style.transform = `translate(${(offsetX / 3)}px, ${(offsetY / 3)}px)`; // Amplitude réduite à 3
-              
-              // Appliquer une opacité plus intense
-              const opacity = Math.random() * 0.6 + 0.4;
-              dot.style.opacity = opacity;
+
+        
+        <style>
+          /* Fond noir */
+          .sticky {
+            position: relative;
+          }
+        
+          /* Conteneur des points blancs interactifs */
+          .dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Les points ne bloquent pas les interactions avec le contenu */
+            z-index: 0; /* Les points sont derrière le contenu */
+          }
+        
+          /* Petits points blancs interactifs */
+          .dots span {
+            display: inline-block;
+            width: 2px; /* Taille des points */
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+          }
+        
+          /* Points blancs en mode sombre */
+          .dark .dots span {
+            background-color: rgba(255, 255, 255, 0.6); /* Points plus légers en mode sombre */
+          }
+        </style>
+        
+        <script>
+          // Créer des petits points blancs sous forme de divs
+          document.addEventListener("DOMContentLoaded", function () {
+            const dotsContainer = document.querySelector('.dots');
+            const totalDots = 600; // Nombre de points
+        
+            // Créer les petits points blancs
+            for (let i = 0; i < totalDots; i++) {
+              const dot = document.createElement('span');
+              dotsContainer.appendChild(dot);
+              const x = Math.random() * 100; // Position aléatoire en X
+              const y = Math.random() * 100; // Position aléatoire en Y
+              const opacity = Math.random() * 0.6 + 0.4; // Opacité aléatoire
+              dot.style.left = `${x}%`;
+              dot.style.top = `${y}%`;
+              dot.style.opacity = opacity; // Appliquer l'opacité aléatoire
             }
+        
+            // Réduire la zone d'interaction à 40px au lieu de 100px
+            document.querySelector('.sticky').addEventListener('mousemove', function (e) {
+              const dots = document.querySelectorAll('.dots span');
+              dots.forEach(dot => {
+                const rect = dot.getBoundingClientRect();
+                const mouseX = e.pageX;
+                const mouseY = e.pageY;
+        
+                const offsetX = mouseX - rect.left;
+                const offsetY = mouseY - rect.top;
+        
+                const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+        
+                // Réduire la zone d'interaction à 40px
+                if (distance < 40) { // Moins de 40px d'interaction
+                  // Déplacer le point sous la souris
+                  dot.style.transform = `translate(${(offsetX / 3)}px, ${(offsetY / 3)}px)`; // Amplitude réduite à 3
+                  
+                  // Appliquer une opacité plus intense
+                  const opacity = Math.random() * 0.6 + 0.4;
+                  dot.style.opacity = opacity;
+                }
+              });
+            });
           });
-        });
-      });
-    </script>
-    
-        </div>
+        </script>
+      </div>
     </div>
+    
+    </div>
+    <!--SECTION 2-->
       <div class="py-20 md:py-24 bg-[#efefef] dark:bg-[#0b113a]" id="features">
         <div class="container px-4 mx-auto">
           <div class="w-full lg:w-1/2 2xl:w-1/2 mx-auto text-center">
